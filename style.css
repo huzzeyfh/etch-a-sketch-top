@@ -1,4 +1,11 @@
 .container {
     display: flex;
-    padding: 256px;
+    flex-wrap: wrap;
+    height: 320px;
+    width: 320px;
+}
+
+.grids {
+    height: 20px;
+    width: 20px;
 }
