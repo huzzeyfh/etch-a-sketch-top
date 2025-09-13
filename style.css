@@ -1,8 +1,13 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.button {
+    margin: 12px;
 }
 
 .container {
@@ -17,3 +22,4 @@ body {
     height: 40x;
     width: 40px;
 }
+
