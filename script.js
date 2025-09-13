@@ -12,13 +12,13 @@ for (i = 0; i < 256; i++) {
 }
 
 //Hover
-const grid = document.querySelectorAll('.grids');
-grid.style.backgroundColor = 'blue';
-// console.log(grid);
-// grid.addEventListener('mouseover', () => {
-//     grid.style.backgroundColor = 'blue';
-// });
+const grids = document.querySelectorAll('.grids');
+grids.forEach((grid) => {
+    grid.addEventListener('mouseover', () => {
+        grid.style.backgroundColor = 'blue';
+    });
 
-// grid.addEventListener('mouseout', () => {
-//     grid.style.backgroundColor = '';
-// });
+    grid.addEventListener('mouseout', () => {
+        grid.style.backgroundColor = '';
+    })
+});
