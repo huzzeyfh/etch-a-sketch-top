@@ -5,20 +5,33 @@ const container = document.querySelector('.container');
 //Hover
 container.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('grids')) {
-        function getRandomColours() {
-            const colours = ['blue', 'purple', 'red', 'yellow', 'green'];
-            const randomColours = Math.floor(Math.random() * colours.length);
-            return colours[randomColours];
+        if (e.target.style.backgroundColor) {
+            //Current opacity
+            let currentOpacity = parseFloat(e.target.style.opacity) || 0;
+            
+            //Increment by 0.1, max = 1
+            let newOpacity = Math.min(currentOpacity + 0.1, 1);
+
+            e.target.style.opacity = newOpacity;
+        } else {
+            e.target.style.backgroundColor = getRandomColours();
+            e.target.style.opacity = '0.1';
         }
-        e.target.style.backgroundColor = getRandomColours();
-    }
+    } 
 });
 
-container.addEventListener('mouseout', (e) => {
-    if (e.target.classList.contains('grids')) {
-        e.target.style.backgroundColor = '';
-    }
-});
+// container.addEventListener('mouseout', (e) => {
+//     if (e.target.classList.contains('grids')) {
+//         e.target.style.backgroundColor = '';
+//     }
+// });
+
+//Get random colours
+function getRandomColours() {
+    const colours = ['blue', 'purple', 'red', 'yellow', 'green'];
+    const randomColours = Math.floor(Math.random() * colours.length);
+    return colours[randomColours];
+}
 
 //Add the grids
 for (i = 0; i < 256; i++) {
