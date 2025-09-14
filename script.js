@@ -2,6 +2,19 @@
 const button = document.querySelector('.button');
 const container = document.querySelector('.container');
 
+//Hover
+container.addEventListener('mouseover', (e) => {
+    if (e.target.classList.contains('grids')) {
+        e.target.style.backgroundColor = 'blue';
+    }
+});
+
+container.addEventListener('mouseout', (e) => {
+    if (e.target.classList.contains('grids')) {
+        e.target.style.backgroundColor = '';
+    }
+});
+
 //Add the grids
 for (i = 0; i < 256; i++) {
     const addDivs = document.createElement('div');
@@ -34,20 +47,4 @@ button.addEventListener('click', function promptSize() {
     } else {
         alert('Please input number');
     }
-    
-    console.log(grids);
 });
-
-//Hover
-const grids = document.querySelectorAll('.grids');
-grids.forEach((grid) => {
-    grid.addEventListener('mouseover', () => {
-        grid.style.backgroundColor = 'blue';
-    });
-
-    grid.addEventListener('mouseout', () => {
-        grid.style.backgroundColor = '';
-    })
-});
-
-console.log(grids);
