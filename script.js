@@ -5,7 +5,12 @@ const container = document.querySelector('.container');
 //Hover
 container.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('grids')) {
-        e.target.style.backgroundColor = 'blue';
+        function getRandomColours() {
+            const colours = ['blue', 'purple', 'red', 'yellow', 'green'];
+            const randomColours = Math.floor(Math.random() * colours.length);
+            return colours[randomColours];
+        }
+        e.target.style.backgroundColor = getRandomColours();
     }
 });
 
